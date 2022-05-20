@@ -1,0 +1,10 @@
+services:
+  frontend:
+    image: node:18
+    init: true
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:80
+    command: sh -c 'npm i && npm run dev -- --host --port 80'
